@@ -40,15 +40,22 @@ Ultima modificacion: Anadido Inicializacion().
 
 int main(int argc, char **argv)	 {
 	int socket_control;
+	
 	if (argc != 2)	{
 		fprintf(stderr,"Uso: miftp <servidor>\n");
 		exit(1);
 	}
+	
 	socket_control=AbreConexionControl(argv[1]);
+	
 	Autenticacion(socket_control);
+	
 	Inicializacion(socket_control);
+	
 	Interfaz(socket_control);
+	
 	CierraConexionControl(socket_control);
+	
 	// Finaliza el programa con 0
 	exit (0);
 }	
